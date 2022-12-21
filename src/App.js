@@ -1,16 +1,31 @@
+import { Component } from 'react';
 import './App.css';
-import StarRating from './components/StarRating';
+import AddColorForm from './components/AddColorForm';
+import ColorList from './components/ColorList';
+import colors from './data/colors';
 
 
-function App() {
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      colors
+    }
+  }
 
-  return (
-    <div className="App">
-      <StarRating 
-        totalStars={5}
-        />
-    </div>
-  );
+  render() {
+    const { colors } = this.state
+
+    return (
+      <div className="App">
+        <div className="container">
+          <h1>Color Manager</h1>
+          <AddColorForm />
+          <ColorList colors={colors} />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
