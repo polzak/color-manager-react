@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { v4 } from 'uuid'
 import './App.css';
 import AddColorForm from './components/AddColorForm';
 import ColorList from './components/ColorList';
@@ -12,14 +13,14 @@ class App extends Component {
       colors
     }
     this.addColor = this.addColor.bind(this)
+    this.removeColor = this.removeColor.bind(this)
   }
 
   addColor(title, color) {
-    const newId = this.state.colors.length
     const colors = [
       ...this.state.colors,
       {
-        id: newId,
+        id: v4(),
         title,
         color,
         rating: 0
@@ -28,15 +29,25 @@ class App extends Component {
     this.setState({colors})
   }
 
+  removeColor(id) {
+    const colors = this.state.colors.filter(color => color.id !== id)
+    this.setState({
+      colors
+    })
+  }
+
+
   render() {
-    const { addColor } = this
+    const { addColor, removeColor } = this
     const { colors } = this.state
     return (
       <div className="App">
         <div className="container">
           <h1>Color Manager</h1>
           <AddColorForm onNewColor={addColor} />
-          <ColorList colors={colors} />
+          <ColorList colors={colors} 
+                  onRemove={removeColor}
+          />
         </div>
       </div>
     );
