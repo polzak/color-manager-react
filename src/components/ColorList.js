@@ -1,6 +1,6 @@
 import Color from './Color'
 
-const ColorList = ({ colors=[], onRemove=f=>f }) =>
+const ColorList = ({ colors=[], onRemove=f=>f, onRate=f=>f }) =>
     <div className="color-list">
         {
             (colors.length === 0) ? <p>There is no color yet. Please add a color.</p> 
@@ -8,6 +8,7 @@ const ColorList = ({ colors=[], onRemove=f=>f }) =>
                 <Color key={color.id} 
                     {...color} 
                     onRemove={onRemove}
+                    onRate={onRate}
                     />
                 )
         }

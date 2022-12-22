@@ -14,6 +14,7 @@ class App extends Component {
     }
     this.addColor = this.addColor.bind(this)
     this.removeColor = this.removeColor.bind(this)
+    this.ratingColor = this.ratingColor.bind(this)
   }
 
   addColor(title, color) {
@@ -36,9 +37,16 @@ class App extends Component {
     })
   }
 
+  ratingColor(id, rating) {
+    const colors = this.state.colors.map(color => 
+      (color.id === id) ? {...color, rating} : color)
+    this.setState({
+      colors
+    })
+  }
 
   render() {
-    const { addColor, removeColor } = this
+    const { addColor, removeColor, ratingColor } = this
     const { colors } = this.state
     return (
       <div className="App">
@@ -47,6 +55,7 @@ class App extends Component {
           <AddColorForm onNewColor={addColor} />
           <ColorList colors={colors} 
                   onRemove={removeColor}
+                  onRate={ratingColor}
           />
         </div>
       </div>

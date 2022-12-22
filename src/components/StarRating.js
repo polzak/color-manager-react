@@ -1,9 +1,8 @@
-import { Component } from 'react'
 import Star from './Star'
 
 
 const StarRating = ({
-    starsSelected=0, totalStars=5, onRate=f=>f
+    id, starsSelected=0, totalStars=5, onRate=f=>f
 }) =>
         <div>
             <div className="star-rating">
@@ -11,11 +10,10 @@ const StarRating = ({
                     [...Array(totalStars)].map((n,i) => 
                         <Star key={i}
                             selected={i < starsSelected}
-                            onClick={() => onRate(i+1)}
+                            onClick={() => onRate(id, i+1)}
                         />
                     )
                 }
-                
             </div>
             <p>Star Rating: {starsSelected} / {totalStars}</p>
         </div>
