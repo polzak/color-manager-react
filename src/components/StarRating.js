@@ -5,6 +5,7 @@ import Star from './Star'
 const StarRating = ({
     starsSelected=0, totalStars=5, onRate=f=>f
 }) =>
+        <div>
             <div className="star-rating">
                 {
                     [...Array(totalStars)].map((n,i) => 
@@ -14,7 +15,9 @@ const StarRating = ({
                         />
                     )
                 }
-                <p>Star Rating: {starsSelected} / {totalStars}</p>
+                
             </div>
+            <p>Star Rating: {starsSelected} / {totalStars}</p>
+        </div>
 
 export default StarRating

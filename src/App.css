@@ -1,3 +1,10 @@
+
+
+input, button {
+    min-height: 1.8rem;
+    margin: 4px;
+}
+
 .App {
     width: 960px;
     margin: auto;
@@ -15,7 +22,7 @@
     height: 25px;
     width: 25px;
     margin: 2px;
-    float: left;
+
     background-color: grey;
     clip-path: polygon(
         50% 0%,
@@ -31,11 +38,37 @@
     );
 }
 
+.star-rating {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
 .selected {
     background-color: red;
 }
 
-.color {
-    width: 50px;
-    height: 50px;
+.color-list {
+    display: flex;
+    
 }
+
+.color-box {
+    width: 180px;
+    border: 8px solid;
+    margin: 8px;
+    padding: 0 16px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.color {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+}
+
+.form {
+    margin: 8px 0 16px 0;
+}
+

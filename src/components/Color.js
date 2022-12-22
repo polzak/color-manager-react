@@ -1,8 +1,8 @@
 import StarRating from "./StarRating";
 
 const Color = ({title, color, rating=0}) => 
-    <section>
-        <h1>{title}</h1>
+    <section className="color-box" style={{ borderColor: color}}>
+        <h1>{title.toUpperCase()}</h1>
         <div className="color" style={{ backgroundColor: color }}>
         </div>
         <div>
