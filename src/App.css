@@ -1,12 +1,10 @@
-
-
 input, button {
     min-height: 1.8rem;
     margin: 4px;
 }
 
 .App {
-    width: 960px;
+    width: 732px;
     margin: auto;
 }
 
@@ -50,7 +48,8 @@ input, button {
 
 .color-list {
     display: flex;
-    
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .color-box {

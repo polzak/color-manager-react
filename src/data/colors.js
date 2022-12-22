@@ -1,18 +1,18 @@
 const colors = [
     {
-        "id": "001",
+        "id": 1,
         "title": "sunset ocean",
         "color": "#00c4e2",
         "rating": 5
     },
     {
-        "id": "002",
+        "id": 2,
         "title": "grass",
         "color": "#26ac56",
         "rating": 3
     },
     {
-        "id": "003",
+        "id": 3,
         "title": "light red",
         "color": "#ff0000",
         "rating": 0
